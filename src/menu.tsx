@@ -20,7 +20,7 @@ function Menu(_props: MenuProps) {
   }, []);
 
   return (
-    <List isLoading={!app} searchBarPlaceholder="Filter menu items by name..." navigationTitle={app}>
+    <List isLoading={!app} searchBarPlaceholder="Filter menu bar options...">
       {menuBar.map((menu: MenuBar) => {
         const { title, subtitle, icon, shortcut, arg } = menu;
 
