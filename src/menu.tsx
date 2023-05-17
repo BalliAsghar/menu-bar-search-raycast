@@ -5,9 +5,7 @@ import { clickMenuBarOption, Settings } from "./utils";
 import { useEffect, useState } from "react";
 import React from "react";
 
-interface MenuProps {}
-Settings("showKeyboardShortcuts");
-function Menu(_props: MenuProps) {
+function Menu() {
   const [app, setApp] = useState<string>("");
   const menuBar = useMenuBar(app);
 
