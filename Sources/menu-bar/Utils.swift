@@ -27,8 +27,9 @@ func printMenuItemsAsJSON(_ menuItems: [MenuItem]) -> String {
     for item in menuItems {
         var itemJSON: [String: Any] = [:]
         itemJSON["appDisplayName"] = item.appleMenuItem ? "" : appDisplayName
-        itemJSON["title"] = item.shortcut.isEmpty ? item.title : "\(item.title) - \(item.shortcut)"
+        itemJSON["title"] = item.shortcut.isEmpty ? item.title : "\(item.title)"
         itemJSON["subtitle"] = item.subtitle
+        itemJSON["shortcut"] = item.shortcut.isEmpty ? "" : item.shortcut
         itemJSON["arg"] = item.arg
         itemJSON["uid"] = "\(appBundleId)>\(item.uid)"
         itemJSON["icon"] = item.appleMenuItem ? "apple-icon.png" : appPath
