@@ -17,7 +17,7 @@ export default function Menu() {
   }, []);
 
   return (
-    <List isLoading={!app} searchBarPlaceholder="Filter menu items by name...">
+    <List isLoading={!app} searchBarPlaceholder="Filter menu items by name..." navigationTitle={app}>
       {menuBar.map((item: MenuBar) => (
         <List.Item
           title={item.title}
