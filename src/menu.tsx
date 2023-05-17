@@ -11,7 +11,6 @@ export default function Menu() {
   useEffect(() => {
     async function getFrontmostApp() {
       const frontmostApp = await getFrontmostApplication();
-      console.log(frontmostApp);
       setApp(frontmostApp?.name);
     }
     getFrontmostApp();
