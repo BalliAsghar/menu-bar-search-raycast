@@ -12,7 +12,7 @@
   "commands": [
     {
       "name": "menu",
-      "title": "Menu",
+      "title": "Menu Bar",
       "subtitle": "Menu Bar Search",
       "description": "Quickly search for menu bar options for frontmost app",
       "mode": "view"
@@ -22,7 +22,6 @@
     {
       "label": "Pop to root after action",
       "name": "popToRootAfterAction",
-      "title": "Pop to root after action",
       "description": "Pop to root after action",
       "type": "checkbox",
       "default": true,
