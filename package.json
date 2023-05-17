@@ -18,8 +18,21 @@
       "mode": "view"
     }
   ],
+  "preferences": [
+    {
+      "label": "Pop to root after action",
+      "name": "popToRootAfterAction",
+      "title": "Pop to root after action",
+      "description": "Pop to root after action",
+      "type": "checkbox",
+      "default": true,
+      "required": false
+    }
+  ],
   "dependencies": {
-    "@raycast/api": "^1.51.1"
+    "@raycast/api": "^1.51.1",
+    "@raycast/utils": "^1.6.1",
+    "execa": "^7.1.1"
   },
   "devDependencies": {
     "@raycast/eslint-config": "1.0.5",
