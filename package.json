@@ -32,7 +32,7 @@
       "name": "showKeyboardShortcuts",
       "description": "Show Keyboard Shortcuts",
       "type": "checkbox",
-      "default": false,
+      "default": true,
       "required": false
     }
   ],
