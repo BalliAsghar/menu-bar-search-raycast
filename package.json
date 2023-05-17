@@ -2,7 +2,7 @@
   "$schema": "https://www.raycast.com/schemas/extension.json",
   "name": "menu-bar-search",
   "title": "Menu Bar Search",
-  "description": "Search Menu Bar",
+  "description": "Quickly search for menu bar options for frontmost app",
   "icon": "command-icon.png",
   "author": "BalliAsghar",
   "categories": [
@@ -14,7 +14,7 @@
       "name": "menu",
       "title": "Menu",
       "subtitle": "Menu Bar Search",
-      "description": "",
+      "description": "Quickly search for menu bar options for frontmost app",
       "mode": "view"
     }
   ],
@@ -31,6 +31,7 @@
   },
   "scripts": {
     "build": "ray build -e dist",
+    "build-swift": "swift build --configuration=release --arch arm64 --arch x86_64 && mv .build/apple/Products/Release/menu-bar assets",
     "dev": "ray develop",
     "fix-lint": "ray lint --fix",
     "lint": "ray lint",
