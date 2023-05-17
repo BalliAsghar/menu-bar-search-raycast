@@ -1,7 +1,7 @@
-import { Action, ActionPanel, List, getFrontmostApplication } from "@raycast/api";
+import { Action, ActionPanel, Icon, List, getFrontmostApplication } from "@raycast/api";
 import { useMenuBar } from "./useCachedMenuBar";
 import { MenuBar } from "./types";
-import { clickMenuBarOption } from "./utils";
+import { clickMenuBarOption, Settings } from "./utils";
 import { useEffect, useState } from "react";
 
 export default function Menu() {
@@ -18,17 +18,23 @@ export default function Menu() {
 
   return (
     <List isLoading={!app} searchBarPlaceholder="Filter menu items by name..." navigationTitle={app}>
-      {menuBar.map((item: MenuBar) => (
+      {menuBar.map((menu: MenuBar) => (
         <List.Item
-          title={item.title}
-          subtitle={item.subtitle}
-          key={item.arg}
-          icon={{ fileIcon: item.icon }}
+          title={menu.title}
+          subtitle={menu.subtitle}
+          key={menu.arg}
+          icon={{ fileIcon: menu.icon }}
           actions={
             <ActionPanel>
-              <Action title="Click" onAction={async () => await clickMenuBarOption(item.arg)} />
+              <Action title="Click" onAction={async () => await clickMenuBarOption(menu.arg)} />
             </ActionPanel>
           }
+          {...(Settings("showKeyboardShortcuts") && {
+            ...(menu.shortcut && {
+              accessoryIcon: Icon.Keyboard,
+              accessoryTitle: menu.shortcut,
+            }),
+          })}
         ></List.Item>
       ))}
     </List>

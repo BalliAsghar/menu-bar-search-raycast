@@ -26,6 +26,14 @@
       "type": "checkbox",
       "default": true,
       "required": false
+    },
+    {
+      "label": "Show Keyboard Shortcuts",
+      "name": "showKeyboardShortcuts",
+      "description": "Show Keyboard Shortcuts",
+      "type": "checkbox",
+      "default": false,
+      "required": false
     }
   ],
   "dependencies": {

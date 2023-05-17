@@ -1,6 +1,7 @@
 export interface MenuBar {
   title: string;
   subtitle: string;
+  shortcut: string;
   appDisplayName: string;
   arg: string;
   uid: string;

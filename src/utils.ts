@@ -4,9 +4,9 @@ import { join } from "path";
 import { MenuBar, MenuBarError } from "./types";
 import { chmod } from "fs/promises";
 
-export function popToRootAfterAction(): Promise<boolean> {
-  const { popToRootAfterAction } = getPreferenceValues();
-  return popToRootAfterAction;
+export function Settings(SettingName: string): boolean {
+  const Settings = getPreferenceValues();
+  return Settings[SettingName];
 }
 
 async function prepareCommand(): Promise<string> {
@@ -34,7 +34,7 @@ export async function clickMenuBarOption(arg: string): Promise<void> {
   try {
     // need to close the main window before clicking the menu bar, otherwise some apps will not respond, e.g. VSCode
     closeMainWindow({
-      popToRootType: (await popToRootAfterAction()) ? PopToRootType.Immediate : PopToRootType.Suspended,
+      popToRootType: Settings("popToRootAfterAction") ? PopToRootType.Immediate : PopToRootType.Suspended,
     });
 
     await execa(command, ["-click", arg]);
